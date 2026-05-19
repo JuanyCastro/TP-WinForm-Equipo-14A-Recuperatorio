@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="dominio/dominio.csproj" />
-  <Project Path="negocio/negocio.csproj" />
-  <Project Path="TPWinForm_Equipo-14A-Recuperatorio/TPWinForm_Equipo-14A-Recuperatorio.csproj" />
+  <Project Path="dominio/dominio.csproj" Id="1baeb5db-a4cf-4f6b-bc9a-030a28b2b8ca" />
+  <Project Path="negocio/negocio.csproj" Id="5e4bb50a-5700-4fa5-a226-dcb4c6434fca" />
+  <Project Path="TPWinForm_Equipo-14A-Recuperatorio/TPWinForm_Equipo-14A-Recuperatorio.csproj" Id="162d085e-5e49-4623-8449-67b9edd3ffa3" />
 </Solution>
