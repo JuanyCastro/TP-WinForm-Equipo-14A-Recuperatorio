@@ -121,6 +121,31 @@ namespace negocio
             }
         }
 
+        public bool existeCodigo(string codigo, int idArticuloActual = 0)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT Id FROM ARTICULOS WHERE Codigo = @codigo AND Id != @idArticuloActual");
+                datos.setearParametro("@codigo", codigo);
+                datos.setearParametro("@idArticuloActual", idArticuloActual);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                    return true;
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public List<Articulo> filtrar(string campo, string criterio, string filtro)
         {
             List<Articulo> lista = new List<Articulo>();

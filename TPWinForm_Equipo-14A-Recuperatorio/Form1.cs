@@ -182,20 +182,20 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                 return;
             }
 
-            /*
+
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             frmAltaArticulo verDetalle = new frmAltaArticulo(seleccionado, true);
             verDetalle.ShowDialog();
-            */
+
         }
 
         private void tsbNuevoArticulo_Click(object sender, EventArgs e)
         {
-            /*
+
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
             cargar();
-            */
+
         }
 
         private void tsbModificarArticulo_Click(object sender, EventArgs e)
@@ -206,13 +206,13 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                 return;
             }
 
-            /*
+
             Articulo seleccionado;
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
             cargar();
-            */
+
         }
 
         private void tsbEliminarArticulo_Click(object sender, EventArgs e)
@@ -223,7 +223,7 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                 return;
             }
 
-            /*
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             Articulo seleccionado;
             try
@@ -241,7 +241,7 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
             {
                 MessageBox.Show(ex.ToString());
             }
-            */
+
         }
 
         private void tsbGestionMarcas_Click(object sender, EventArgs e)
