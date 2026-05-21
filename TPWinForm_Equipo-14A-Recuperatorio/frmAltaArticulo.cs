@@ -44,7 +44,7 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                 return;
 
             ArticuloNegocio negocio = new ArticuloNegocio();
-            //ImagenNegocio imgNegocio = new ImagenNegocio();
+            ImagenNegocio imgNegocio = new ImagenNegocio();
 
             try
             {
@@ -70,31 +70,31 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                 {
                     negocio.modificar(articulo);
 
-                    //if (articulo.Imagenes != null)
-                    //{
-                    //    foreach (Imagen img in articulo.Imagenes)
-                    //    {
-                    //        if (img.Id == 0)
-                    //        {
-                    //            img.IdArticulo = articulo.Id;
-                    //            imgNegocio.agregar(img);
-                    //        }
-                    //    }
-                    //}
+                    if (articulo.Imagenes != null)
+                    {
+                        foreach (Imagen img in articulo.Imagenes)
+                        {
+                            if (img.Id == 0)
+                            {
+                                img.IdArticulo = articulo.Id;
+                                imgNegocio.agregar(img);
+                            }
+                        }
+                    }
                     MessageBox.Show("Artículo modificado exitosamente");
                 }
                 else
                 {
                     int idGenerado = negocio.agregar(articulo);
 
-                    //if (articulo.Imagenes != null && articulo.Imagenes.Count > 0)
-                    //{
-                    //    foreach (Imagen img in articulo.Imagenes)
-                    //    {
-                    //        img.IdArticulo = idGenerado;
-                    //        imgNegocio.agregar(img);
-                    //    }
-                    //}
+                    if (articulo.Imagenes != null && articulo.Imagenes.Count > 0)
+                    {
+                        foreach (Imagen img in articulo.Imagenes)
+                        {
+                            img.IdArticulo = idGenerado;
+                            imgNegocio.agregar(img);
+                        }
+                    }
                     MessageBox.Show("Artículo agregado exitosamente");
                 }
 
@@ -114,16 +114,16 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
             ArticuloNegocio articulonegocio = new ArticuloNegocio();
-            //MarcaNegocio marcaNegocio = new MarcaNegocio();
-            //CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             try
             {
-                //cboMarca.DataSource = marcaNegocio.listar();
-                //cboMarca.DisplayMember = "Descripcion";
-                //cboMarca.ValueMember = "Id";
-                //cboCategoria.DataSource = categoriaNegocio.listar();
-                //cboCategoria.DisplayMember = "Descripcion";
-                //cboCategoria.ValueMember = "Id";
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.DisplayMember = "Descripcion";
+                cboMarca.ValueMember = "Id";
+                cboCategoria.DataSource = categoriaNegocio.listar();
+                cboCategoria.DisplayMember = "Descripcion";
+                cboCategoria.ValueMember = "Id";
 
                 if (articulo != null)
                 {
@@ -174,6 +174,7 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                 MessageBox.Show(ex.ToString());
             }
         }
+
         private void cargarImagen(string imagen)
         {
             try
@@ -190,6 +191,7 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                 pbxDetalle.Load("https://dummyimage.com/400x400/efefef/000000&text=Sin+Imagen");
             }
         }
+
         private bool validarCampos()
         {
             if (string.IsNullOrWhiteSpace(txtCodigo.Text) ||
@@ -295,30 +297,30 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
             txtImagen.Clear();
         }
 
-        //private void btnEliminarImagen_Click(object sender, EventArgs e)
-        //{
-        //    if (articulo.Imagenes != null && articulo.Imagenes.Count > 0)
-        //    {
-        //        DialogResult respuesta = MessageBox.Show("¿Seguro que querés eliminar esta imagen?", "Eliminar Imagen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        private void btnEliminarImagen_Click(object sender, EventArgs e)
+        {
+            if (articulo.Imagenes != null && articulo.Imagenes.Count > 0)
+            {
+                DialogResult respuesta = MessageBox.Show("¿Seguro que querés eliminar esta imagen?", "Eliminar Imagen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-        //        if (respuesta == DialogResult.Yes)
-        //        {
-        //            Imagen imgActual = articulo.Imagenes[indiceImagenActual];
+                if (respuesta == DialogResult.Yes)
+                {
+                    Imagen imgActual = articulo.Imagenes[indiceImagenActual];
 
-        //            if (imgActual.Id != 0)
-        //            {
-        //                ImagenNegocio imgNegocio = new ImagenNegocio();
-        //                imgNegocio.eliminar(imgActual.Id);
-        //            }
+                    if (imgActual.Id != 0)
+                    {
+                        ImagenNegocio imgNegocio = new ImagenNegocio();
+                        imgNegocio.eliminar(imgActual.Id);
+                    }
 
-        //            articulo.Imagenes.RemoveAt(indiceImagenActual);
+                    articulo.Imagenes.RemoveAt(indiceImagenActual);
 
-        //            if (indiceImagenActual > 0)
-        //                indiceImagenActual--;
+                    if (indiceImagenActual > 0)
+                        indiceImagenActual--;
 
-        //            mostrarImagenActual();
-        //        }
-        //    }
-        //}
+                    mostrarImagenActual();
+                }
+            }
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            /*
+            
             if (dgvArticulos.CurrentRow != null)
             {
                 Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
@@ -60,7 +60,7 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                     cargarImagen("");
                 }
             }
-            */
+            
         }
 
         private void cargarImagen(string imagen)
@@ -100,7 +100,7 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = tBoxFiltro.Text;
 
-                // dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
             }
             catch (Exception ex)
             {
