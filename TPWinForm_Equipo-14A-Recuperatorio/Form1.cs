@@ -246,20 +246,16 @@ namespace TPWinForm_Equipo_14A_Recuperatorio
 
         private void tsbGestionMarcas_Click(object sender, EventArgs e)
         {
-            /*
-            frmGestionMarca gestionMarcas = new frmGestionMarca();
+            frmGestionMarcas gestionMarcas = new frmGestionMarcas();
             gestionMarcas.ShowDialog();
             cargar();
-            */
         }
 
         private void tsbGestionCategorias_Click(object sender, EventArgs e)
         {
-            /*
             frmGestionCategorias gestionCategorias = new frmGestionCategorias();
             gestionCategorias.ShowDialog();
             cargar();
-            */
         }
     }
 }

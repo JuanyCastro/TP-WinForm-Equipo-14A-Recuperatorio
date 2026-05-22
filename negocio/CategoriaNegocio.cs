@@ -92,5 +92,30 @@ namespace negocio
                 throw ex;
             }
         }
+        public bool existeCategoria(string descripcion, int idActual = 0)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT Id FROM CATEGORIAS WHERE Descripcion = @descripcion AND Id != @idActual");
+                datos.setearParametro("@descripcion", descripcion);
+                datos.setearParametro("@idActual", idActual);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                    return true;
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }
