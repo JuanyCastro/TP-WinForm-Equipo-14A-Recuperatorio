@@ -219,7 +219,7 @@
             // 
             // btnAgregarImagen
             // 
-            //this.btnAgregarImagen.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarImagen.Image")));
+            this.btnAgregarImagen.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarImagen.Image")));
             this.btnAgregarImagen.Location = new System.Drawing.Point(412, 198);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(30, 30);
@@ -229,13 +229,13 @@
             // 
             // btnEliminarImagen
             // 
-            //this.btnEliminarImagen.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarImagen.Image")));
+            this.btnEliminarImagen.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarImagen.Image")));
             this.btnEliminarImagen.Location = new System.Drawing.Point(448, 198);
             this.btnEliminarImagen.Name = "btnEliminarImagen";
             this.btnEliminarImagen.Size = new System.Drawing.Size(30, 30);
             this.btnEliminarImagen.TabIndex = 20;
             this.btnEliminarImagen.UseVisualStyleBackColor = true;
-            //this.btnEliminarImagen.Click += new System.EventHandler(this.btnEliminarImagen_Click);
+            this.btnEliminarImagen.Click += new System.EventHandler(this.btnEliminarImagen_Click);
             // 
             // lblContadorImagen
             // 

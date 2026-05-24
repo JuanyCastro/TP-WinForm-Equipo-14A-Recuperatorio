@@ -89,6 +89,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Form11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaArticulo.resx">
+      <DependentUpon>frmAltaArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionCategorias.resx">
       <DependentUpon>frmGestionCategorias.cs</DependentUpon>
     </EmbeddedResource>
